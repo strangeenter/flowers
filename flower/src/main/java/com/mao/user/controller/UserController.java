@@ -43,7 +43,17 @@ public class UserController {
 
     @RequestMapping("/flowers/userindex.do")
     public String toFlowersIndex(){
-
         return "flowers/index";
+    }
+
+    @RequestMapping("/register.do")
+    public ReturnMessage registerUser(HttpServletRequest request){
+        request.getParameter("");
+        return null;
+    }
+
+    @RequestMapping("/toRegister.do")
+    public String toRegister(HttpServletRequest request){
+        return "user/register";
     }
 }

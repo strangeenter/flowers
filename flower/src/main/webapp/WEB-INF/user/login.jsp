@@ -113,7 +113,7 @@
     );
     $("#registerButton").click(
         function () {
-            window.location.href = "";
+            window.location.href = "toRegister.do";
         }
     );
 </script>
