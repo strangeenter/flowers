@@ -7,6 +7,7 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
+
     .login_box {
         width: 400px;
         height: 400px;
@@ -16,6 +17,7 @@
         border-radius: 5px;
         overflow: hidden;
     }
+
     .title {
         text-align: center;
         font-size: 28px;
@@ -25,6 +27,7 @@
         letter-spacing: 3px;
         font-family: sans-serif;
     }
+
     .input_box {
         width: 300px;
         height: 30px;
@@ -34,6 +37,7 @@
         margin-top: 20px;
         margin-left: 50px;
     }
+
     .button_box {
         width: 300px;
         height: 35px;
@@ -46,6 +50,7 @@
         cursor: pointer;
         color: #fff;
     }
+
     .logo_box {
         position: absolute;
         background-color: #fff;
@@ -57,6 +62,7 @@
         border: solid 5px #A68364;
         text-align: center;
     }
+
     .logo_img {
         margin-top: 20px;
     }
@@ -89,22 +95,22 @@
         function () {
             var username = $("#username").val();
             var password = $("#password").val();
-            if (username === "" && password === ""){
+            if (username === "" && password === "") {
                 $("#msg").text("账号和密码不能为空");
                 return;
             }
             $.ajax({
-                url:'login.do',
-                data:{
-                    username:username,
-                    password:password,
+                url: 'login.do',
+                data: {
+                    username: username,
+                    password: password,
                 },
-                type:'POST',
-                datatype:'json',
-                success:function (ret) {
-                    if ("1"===ret.code) {
+                type: 'POST',
+                datatype: 'json',
+                success: function (ret) {
+                    if ("1" === ret.code) {
                         window.location.href = "/flowers/userindex.do";
-                    }else{
+                    } else {
                         $("#msg").text(ret.massage);
                     }
                 },

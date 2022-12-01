@@ -6,7 +6,7 @@
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="address" jdbcType="VARCHAR" property="address" />
-    <result column="phone" jdbcType="INTEGER" property="phone" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
     <result column="auth" jdbcType="VARCHAR" property="auth" />
     <result column="login_name" jdbcType="VARCHAR" property="loginName" />
     <result column="annexid" jdbcType="VARCHAR" property="annexid" />
@@ -29,7 +29,7 @@
       address, phone, auth, 
       login_name, annexid)
     values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{address,jdbcType=VARCHAR}, #{phone,jdbcType=INTEGER}, #{auth,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{auth,jdbcType=VARCHAR},
       #{loginName,jdbcType=VARCHAR}, #{annexid,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.mao.user.model.User">
@@ -74,7 +74,7 @@
         #{address,jdbcType=VARCHAR},
       </if>
       <if test="phone != null">
-        #{phone,jdbcType=INTEGER},
+        #{phone,jdbcType=VARCHAR},
       </if>
       <if test="auth != null">
         #{auth,jdbcType=VARCHAR},
@@ -100,7 +100,7 @@
         address = #{address,jdbcType=VARCHAR},
       </if>
       <if test="phone != null">
-        phone = #{phone,jdbcType=INTEGER},
+        phone = #{phone,jdbcType=VARCHAR},
       </if>
       <if test="auth != null">
         auth = #{auth,jdbcType=VARCHAR},
@@ -119,13 +119,13 @@
     set name = #{name,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       address = #{address,jdbcType=VARCHAR},
-      phone = #{phone,jdbcType=INTEGER},
+      phone = #{phone,jdbcType=VARCHAR},
       auth = #{auth,jdbcType=VARCHAR},
       login_name = #{loginName,jdbcType=VARCHAR},
       annexid = #{annexid,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
   <select id="login" resultMap="BaseResultMap" parameterType="Map">
-    select <include refid="Base_Column_List"></include> from person where name = #{name} and password = #{password}
+    select <include refid="Base_Column_List"></include> from person where login_name = #{loginName} and password = #{password}
   </select>
 </mapper>

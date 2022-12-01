@@ -1,5 +1,10 @@
 package com.mao.user.model;
 
+import com.mao.system.utils.SystemUtils;
+
+import java.util.Date;
+import java.util.UUID;
+
 public class User {
     private String id;
 
@@ -9,13 +14,24 @@ public class User {
 
     private String address;
 
-    private Integer phone;
+    private String phone;
 
     private String auth;
 
     private String loginName;
 
     private String annexid;
+
+    public User() {
+        if (this.getId() == null) {
+            try {
+                this.setId(SystemUtils.toMd5(String.valueOf(UUID.randomUUID())));
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+
+        }
+    }
 
     public String getId() {
         return id;
@@ -49,11 +65,11 @@ public class User {
         this.address = address;
     }
 
-    public Integer getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
