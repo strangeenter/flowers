@@ -1,16 +1,12 @@
 package com.mao.user.service.impl;
 
 import com.mao.system.utils.SystemUtils;
-import com.mao.user.dao.UserMapper;
+import com.mao.mapper.UserMapper;
 import com.mao.user.model.User;
 import com.mao.user.service.UserService;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import java.math.BigInteger;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.Map;
 

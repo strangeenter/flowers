@@ -5,7 +5,7 @@
     <!-- 指定连接数据库的 JDBC 驱动包所在位置，指定到你本机的完整路径 -->
     <!-- 没有这行代码会报错”com.mysql.cj.jdbc.Driver“，我找了半天才发现是少了这一行-->
     <!-- jdbc驱动包mysql-connector-java-8.0.26.jar，没有的可以百度一下下载教程下载  -->
-    <classPathEntry location="J:\local_Repository\mysql\mysql-connector-java\8.0.27\mysql-connector-java-8.0.27.jar"/>
+    <classPathEntry location="C:\Users\15071\.m2\repository\mysql\mysql-connector-java\8.0.30\mysql-connector-java-8.0.30.jar"/>
 
     <context id="context1">
         <!-- 注释构建 -->
@@ -20,7 +20,7 @@
         <!-- 数据库四要素 -->
         <!-- 需要按自己的数据库名，密码修改-->
         <!-- xml文件中&是非法的，应该使用转义字符`&amp;`，将所有&都替换为`&amp;`-->
-        <jdbcConnection connectionURL="jdbc:mysql://localhost:3307/flowers?serverTimezone=UTC&amp;characterEncoding=utf-8&amp;useSSL=false"
+        <jdbcConnection connectionURL="jdbc:mysql://localhost:3306/flowers?serverTimezone=UTC&amp;characterEncoding=utf-8&amp;useSSL=false"
                         driverClass="com.mysql.cj.jdbc.Driver"
                         password="root"
                         userId="root" />
@@ -29,12 +29,12 @@
         <!-- 生成model类，targetPackage指定model类的包名，targetProject指定生成的model类放在哪个工程下面 -->
         <!-- 实体类  -->
         <!--        按自己的项目路径修改-->
-        <javaModelGenerator targetPackage="com.mao.user.model" targetProject="J:/work/flowers/flower/src/main/java" />
+        <javaModelGenerator targetPackage="com.mao.flowers.model" targetProject="D:\java\project\flowers\flower\src\main\java" />
 
         <!-- 生成Mybatis的Mapper.xml文件，targetPackage指定Mapper.xml文件的包名，targetProject指定生成的Mapper.xml放在哪个工程下面 -->
         <!-- 映射文件 -->
         <!--        按自己的项目路径修改-->
-        <sqlMapGenerator targetPackage="com.mao.user.dao" targetProject="J:/work/flowers/flower/src/main/java" />
+        <sqlMapGenerator targetPackage="com.mao.flowers.dao" targetProject="D:\java\project\flowers\flower\src\main\java" />
 
         <!-- ANNOTATEDMAPPER
             XMLMAPPER
@@ -43,10 +43,10 @@
         <!-- 生成Mybatis的Mapper接口类文件，targetPackage指定Mapper接口类的包名，targetProject指定生成的Mapper接口放在哪个工程下面 -->
         <!-- 操作接口 -->
         <!--        按自己的项目路径修改-->
-        <javaClientGenerator  targetPackage="com.mao.user.dao" targetProject="J:/work/flowers/flower/src/main/java" type="XMLMAPPER" />
+        <javaClientGenerator  targetPackage="com.mao.flowers.dao" targetProject="D:\java\project\flowers\flower\src\main\java" type="XMLMAPPER" />
         <!-- tableName:数据库表名; domainObjectName:对应的Java模型类名 -->
         <!--        按自己的数据库名修改-->
-        <table  tableName="person"  domainObjectName="User"  enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
+        <table  tableName="flowers"  domainObjectName="Flower"  enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"></table>
 
     </context>
 </generatorConfiguration>

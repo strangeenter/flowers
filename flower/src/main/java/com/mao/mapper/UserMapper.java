@@ -1,4 +1,4 @@
-package com.mao.user.dao;
+package com.mao.mapper;
 
 import com.mao.user.model.User;
 

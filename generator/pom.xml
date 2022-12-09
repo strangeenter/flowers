@@ -24,7 +24,7 @@
         <artifactId>mybatis-generator-maven-plugin</artifactId>
         <version>1.3.6</version>
         <configuration>
-          <configurationFile>GeneratorMapper.xml</configurationFile>
+          <configurationFile>src/main/resources/GeneratorMapper.xml</configurationFile>
           <verbose>true</verbose>
           <overwrite>true</overwrite>
         </configuration>

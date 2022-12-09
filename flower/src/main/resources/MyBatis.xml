@@ -3,9 +3,9 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeAliases>
-        <package name="com.mao.user.dao"/>
+        <package name="com.mao.mapper"/>
     </typeAliases>
     <mappers>
-        <package name="com.mao.user.dao"/>
+        <package name="com.mao.mapper"/>
     </mappers>
 </configuration>
